@@ -18,8 +18,14 @@ Esempi di spunti che potresti esplorare:
 * “La città di cellulosa”: Matera è un set naturale e versatile. I suoi scorci sono stati sfondo per qualsiasi tipo di storia, da Gesù a James Bond fino al recente sceneggiato RAI. Prova ad inventare la tua storia, magari sarà di ispirazione per un nuovo film.
 
 # Inizializzazione
-Installare da Git Bash: 
+Installare da Git Bash nella cartella root del progetto git: 
 ```
 git lfs install
+git lfs pull
 ```
 Permette di gestire e usare file > 100 mb nel repository github
+
+Verifica presenza dei file:
+```
+git lfs ls-files
+```
