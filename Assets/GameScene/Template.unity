@@ -232,9 +232,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1753034783345849257, guid: 59085e74117cdc94182dde4dffb0e7f4, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248565811611035372, guid: 59085e74117cdc94182dde4dffb0e7f4, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095088761278101507, guid: 59085e74117cdc94182dde4dffb0e7f4, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8771091787928289351, guid: 59085e74117cdc94182dde4dffb0e7f4, type: 3}
       propertyPath: m_Name
       value: MadonnaDelleVirtu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771091787928289351, guid: 59085e74117cdc94182dde4dffb0e7f4, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -315,7 +331,7 @@ MonoBehaviour:
   m_SoftShadowQuality: 0
   m_RenderingLayersMask:
     serializedVersion: 0
-    m_Bits: 1
+    m_Bits: 7
   m_ShadowRenderingLayersMask:
     serializedVersion: 0
     m_Bits: 4294967295
@@ -373,7 +389,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 7
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
