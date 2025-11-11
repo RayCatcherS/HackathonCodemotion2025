@@ -16,3 +16,10 @@ Esempi di spunti che potresti esplorare:
 * “Futuro antico”: immaginare Matera in un futuro alternativo: come apparirebbe tra cento o mille anni?
 * “Matera come Silent Hill”: il Marranghino, il Monachicchio, lupi mannari e vampiri, il drago di Stigliano, città innominabili, fantasmi e masciare.
 * “La città di cellulosa”: Matera è un set naturale e versatile. I suoi scorci sono stati sfondo per qualsiasi tipo di storia, da Gesù a James Bond fino al recente sceneggiato RAI. Prova ad inventare la tua storia, magari sarà di ispirazione per un nuovo film.
+
+# Inizializzazione
+Installare da Git Bash: 
+```
+git lfs install
+```
+Permette di gestire e usare file > 100 mb nel repository github
