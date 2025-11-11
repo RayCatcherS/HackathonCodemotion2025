@@ -153,10 +153,10 @@ MonoBehaviour:
     m_Value: 200
   bottomAltitude:
     m_OverrideState: 1
-    m_Value: 1866
+    m_Value: 1737
   altitudeRange:
     m_OverrideState: 1
-    m_Value: 1925
+    m_Value: 1819
   shapeOffset:
     m_OverrideState: 1
     m_Value: {x: 0.1, y: -0.04, z: 0.05}
