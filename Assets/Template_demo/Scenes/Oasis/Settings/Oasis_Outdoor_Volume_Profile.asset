@@ -62,10 +62,10 @@ MonoBehaviour:
       m_RotationOrder: 4
   shapeFactor:
     m_OverrideState: 1
-    m_Value: 0.505
+    m_Value: 0.571
   shapeScale:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 8.03
   erosionFactor:
     m_OverrideState: 1
     m_Value: 0.555
@@ -153,10 +153,10 @@ MonoBehaviour:
     m_Value: 200
   bottomAltitude:
     m_OverrideState: 1
-    m_Value: 1705.3
+    m_Value: 1866
   altitudeRange:
     m_OverrideState: 1
-    m_Value: 2000
+    m_Value: 1925
   shapeOffset:
     m_OverrideState: 1
     m_Value: {x: 0.1, y: -0.04, z: 0.05}
@@ -165,10 +165,10 @@ MonoBehaviour:
     m_Value: 0
   globalSpeed:
     m_OverrideState: 1
-    m_Value: 500
+    m_Value: -500
   globalOrientation:
     m_OverrideState: 1
-    m_Value: 120
+    m_Value: 150
   shapeSpeedMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -186,7 +186,7 @@ MonoBehaviour:
     m_Value: 0
   ambientLightProbeDimmer:
     m_OverrideState: 1
-    m_Value: 0.98
+    m_Value: 0.39
   sunLightDimmer:
     m_OverrideState: 1
     m_Value: 1.38
@@ -206,7 +206,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   shadowResolution:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 256
   shadowDistance:
     m_OverrideState: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
     m_Value: 118
   numLightSteps:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 10
   fadeInMode:
     m_OverrideState: 0
     m_Value: 0
