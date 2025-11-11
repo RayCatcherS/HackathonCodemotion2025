@@ -21,11 +21,14 @@ Esempi di spunti che potresti esplorare:
 Installare da Git Bash nella cartella root del progetto git: 
 ```
 git lfs install
-git lfs pull
 ```
 Permette di gestire e usare file > 100 mb nel repository github
 
-Verifica presenza dei file:
+Scarica e verifica presenza dei file:
+```
+git lfs pull
+```
+elenca quali file sono tracciati da LFS nel repo
 ```
 git lfs ls-files
 ```
