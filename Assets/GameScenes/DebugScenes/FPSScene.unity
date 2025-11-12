@@ -119,36 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &371598402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6539889621809944346, guid: 67361f565e2c9b14db74a567fee48e05, type: 3}
-  m_PrefabInstance: {fileID: 4328625731650966133}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &371598409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371598402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 357ff0c9150743e4a9fbe3fa306813c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupController
-  holdArea: {fileID: 1270243280}
-  pickupRange: 5
-  pickableMask:
-    serializedVersion: 2
-    m_Bits: 0
-  followForce: 20
-  maxCarrySpeed: 12
-  usePhysicsCarry: 1
---- !u!4 &1270243280 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3369495366585121114, guid: 67361f565e2c9b14db74a567fee48e05, type: 3}
-  m_PrefabInstance: {fileID: 4328625731650966133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &257563998211314213
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -350,10 +320,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3369495366585121114, guid: 67361f565e2c9b14db74a567fee48e05, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.203
-      objectReference: {fileID: 0}
     - target: {fileID: 5509608295321326604, guid: 67361f565e2c9b14db74a567fee48e05, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -397,10 +363,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6539889621809944346, guid: 67361f565e2c9b14db74a567fee48e05, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 371598409}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67361f565e2c9b14db74a567fee48e05, type: 3}
 --- !u!54 &4596151239152098006
 Rigidbody:
