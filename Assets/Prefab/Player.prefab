@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 5594371421043029061}
   - component: {fileID: 6719442760518830746}
   - component: {fileID: 4117924460273171143}
+  - component: {fileID: 6612433242375079560}
   m_Layer: 11
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -629,6 +630,29 @@ MonoBehaviour:
   sensY: 400
   orientation: {fileID: 628495987950389179}
   invertY: 1
+--- !u!114 &6612433242375079560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539889621809944346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357ff0c9150743e4a9fbe3fa306813c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupController
+  holdArea: {fileID: 3369495366585121114}
+  pickupRange: 5
+  pickableMask:
+    serializedVersion: 2
+    m_Bits: 0
+  followForce: 20
+  maxCarrySpeed: 12
+  rotationGain: 15
+  maxAngularSpeed: 20
+  carryDrag: 10
+  carryAngularDrag: 10
 --- !u!1 &7287676143989344330
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +724,7 @@ Transform:
   m_GameObject: {fileID: 8257897227906571134}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.08000004, z: 0}
+  m_LocalPosition: {x: 0, y: 0.08000004, z: 2.203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
