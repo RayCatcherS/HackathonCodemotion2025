@@ -1,11 +1,15 @@
 using UnityEngine;
 
 public class PickupController : MonoBehaviour
-{
+{   
     [Header("Pickup Settings")]
     [SerializeField] private Transform holdArea;          // Un empty davanti alla camera (figlio della camera)
     [SerializeField] private float pickupRange = 5f;      // Distanza massima per il raycast
     [SerializeField] private LayerMask pickableMask;      // Lascia vuoto per tutti i layer
+
+    [Header("Keybinds")]
+    [SerializeField] private KeyCode pickUpKey = KeyCode.Space;
+
 
     [Header("Follow (Translation)")]
     [SerializeField] private float followForce = 25f;     // Forza/guadagno verso l'holdArea
@@ -32,7 +36,9 @@ public class PickupController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+
+        if (Input.GetKeyDown(pickUpKey))
         {
             if (heldObj == null) TryPickup();
             else DropObject();
