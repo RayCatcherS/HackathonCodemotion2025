@@ -24,9 +24,9 @@ TagManager:
   - MainCameraOnly
   - Oasis_TerrainBake
   - 
-  - 
+  - player
   - whatIsGround
-  - 
+  - object
   - 
   - 
   - Cockpit

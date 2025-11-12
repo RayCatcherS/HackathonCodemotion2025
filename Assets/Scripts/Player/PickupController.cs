@@ -8,7 +8,7 @@ public class PickupController : MonoBehaviour
     [SerializeField] private LayerMask pickableMask;      // Lascia vuoto per tutti i layer
 
     [Header("Keybinds")]
-    [SerializeField] private KeyCode pickUpKey = KeyCode.Space;
+    [SerializeField] private KeyCode pickUpKey = KeyCode.E;
 
 
     [Header("Follow (Translation)")]
@@ -58,8 +58,8 @@ public class PickupController : MonoBehaviour
         if (!cam) return;
 
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f));
-        if (Physics.Raycast(ray, out var hit, pickupRange, (pickableMask.value == 0) ? ~0 : pickableMask))
-        {
+        if (Physics.Raycast(ray, out var hit, pickupRange, pickableMask))
+        {   
             var rb = hit.rigidbody;
             if (rb != null)
             {
