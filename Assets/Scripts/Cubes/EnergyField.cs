@@ -88,7 +88,7 @@ public class EnergyField : ActivatableItem
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         WindCube windCube = other.gameObject.GetComponent<WindCube>();
         EnergyField energyField = other.gameObject.GetComponent<EnergyField>();
@@ -108,7 +108,7 @@ public class EnergyField : ActivatableItem
         {
             baseItem.EnableItem(true);
         }
-    }
+    }*/
 
 
 

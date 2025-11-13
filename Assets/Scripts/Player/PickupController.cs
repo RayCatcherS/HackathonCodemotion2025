@@ -7,8 +7,8 @@ public class PickupController : MonoBehaviour
     [SerializeField] private float pickupRange = 5f;      // Distanza massima per il raycast
     [SerializeField] private LayerMask pickableMask;      // Lascia vuoto per tutti i layer
 
-    [Header("Keybinds")]
-    [SerializeField] private KeyCode pickUpKey = KeyCode.E;
+    //[Header("Keybinds")]
+    //[SerializeField] private KeyCode pickUpKey = KeyCode.E;
 
 
     [Header("Follow (Translation)")]
@@ -50,7 +50,7 @@ public class PickupController : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(pickUpKey))
+        if (Input.GetMouseButtonDown(0))
         {
             if (heldObj == null) TryPickup();
             else DropObject();

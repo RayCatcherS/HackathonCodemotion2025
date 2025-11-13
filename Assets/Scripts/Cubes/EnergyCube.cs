@@ -49,7 +49,7 @@ public class EnergyCube : MonoBehaviour
             baseItem.EnableItem(false);
         }
     }
-
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.isTrigger) return;
@@ -71,5 +71,5 @@ public class EnergyCube : MonoBehaviour
         {
             baseItem.EnableItem(true);
         }
-    }
+    }*/
 }

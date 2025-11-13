@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Base : ActivatableItem
 {
-    [SerializeField] ActivatableItem[] itemToactivate;
+    [SerializeField] private ActivatableItem[] itemToactivate;
 
     override public void EnableItem(bool enabled)
     {
