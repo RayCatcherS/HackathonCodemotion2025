@@ -35,4 +35,20 @@ public class Terminal : ActivatableItem
         }
 
     }
+
+    public bool IsReadyToInteract()
+    {
+        if (currentCount == countToReachToActivate)
+        {
+            return true;
+        }
+        else { 
+            return false;
+        }
+    }
+
+    public void StartInteraction()
+    {
+
+    }
 }
