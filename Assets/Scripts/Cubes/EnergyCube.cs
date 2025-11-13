@@ -9,6 +9,7 @@ public class EnergyCube : MonoBehaviour
 
         WindCube windCube = other.gameObject.GetComponent<WindCube>();
         EnergyField energyField = other.gameObject.GetComponent<EnergyField>();
+        Base baseItem = other.gameObject.GetComponent<Base>();
 
 
         if (windCube != null )
@@ -20,6 +21,10 @@ public class EnergyCube : MonoBehaviour
         {
             energyField.EnableForceField(true);
         }
+        if (baseItem != null)
+        {
+            baseItem.EnableItem(true);
+        }
 
     }
 
@@ -28,6 +33,7 @@ public class EnergyCube : MonoBehaviour
 
         WindCube windCube = other.gameObject.GetComponent<WindCube>();
         EnergyField energyField = other.gameObject.GetComponent<EnergyField>();
+        Base baseItem = other.gameObject.GetComponent<Base>();
 
         if (windCube != null)
         {
@@ -36,12 +42,17 @@ public class EnergyCube : MonoBehaviour
         if (energyField != null) { 
             energyField.EnableForceField(false);
         }
+        if(baseItem != null)
+        {
+            baseItem.EnableItem(false);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         WindCube windCube = other.gameObject.GetComponent<WindCube>();
         EnergyField energyField = other.gameObject.GetComponent<EnergyField>();
+        Base baseItem = other.gameObject.GetComponent<Base>();
 
 
         if (windCube != null)
@@ -51,6 +62,10 @@ public class EnergyCube : MonoBehaviour
         if (energyField != null)
         {
             energyField.EnableForceField(true);
+        }
+        if (baseItem != null)
+        {
+            baseItem.EnableItem(true);
         }
     }
 }

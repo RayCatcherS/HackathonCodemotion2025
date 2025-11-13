@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1871685280362525301}
   - component: {fileID: 7343138840279204189}
   - component: {fileID: 5396889246236090207}
+  - component: {fileID: 2547320013244950034}
   m_Layer: 0
   m_Name: EnergyField
   m_TagString: Untagged
@@ -111,6 +112,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2547320013244950034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253126869518172226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 2
+  blendDistance: 2
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 5bbbdd0f8adb182429ecfd663d0e122a, type: 2}
 --- !u!1 &1871279837949563939
 GameObject:
   m_ObjectHideFlags: 0
