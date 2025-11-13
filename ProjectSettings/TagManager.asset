@@ -27,7 +27,7 @@ TagManager:
   - player
   - whatIsGround
   - object
-  - termina_object
+  - interactable
   - 
   - Cockpit
   - Cockpit_3DSkybox

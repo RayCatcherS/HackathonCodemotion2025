@@ -6,6 +6,8 @@ public class PickupController : MonoBehaviour
     [SerializeField] private Transform holdArea;          // Un empty davanti alla camera (figlio della camera)
     [SerializeField] private float pickupRange = 5f;      // Distanza massima per il raycast
     [SerializeField] private LayerMask pickableMask;      // Lascia vuoto per tutti i layer
+    [SerializeField] private LayerMask interactableMask;
+    
 
     //[Header("Keybinds")]
     //[SerializeField] private KeyCode pickUpKey = KeyCode.E;
@@ -27,6 +29,7 @@ public class PickupController : MonoBehaviour
     [SerializeField] private GameObject crosshairIcon;
     [SerializeField] private GameObject openHandIcon;
     [SerializeField] private GameObject closedHandIcon;
+    [SerializeField] private GameObject InteractalbeIcon;
 
 
     private GameObject heldObj;
@@ -43,6 +46,7 @@ public class PickupController : MonoBehaviour
         crosshairIcon.SetActive(true);
         closedHandIcon.SetActive(false);
         openHandIcon.SetActive(false);
+        InteractalbeIcon.SetActive(false);
 
     }
 
@@ -56,8 +60,11 @@ public class PickupController : MonoBehaviour
             else DropObject();
         }
 
+        
+        
 
-        if(heldObj == null)
+
+        if (heldObj == null)
         {
             if (IsItemPickable())
             {
@@ -65,6 +72,8 @@ public class PickupController : MonoBehaviour
                 crosshairIcon.SetActive(false);
                 closedHandIcon.SetActive(false);
                 openHandIcon.SetActive(true);
+                InteractalbeIcon.SetActive(false);
+
             }
             else
             {
@@ -72,6 +81,20 @@ public class PickupController : MonoBehaviour
                 crosshairIcon.SetActive(true);
                 closedHandIcon.SetActive(false);
                 openHandIcon.SetActive(false);
+                InteractalbeIcon.SetActive(false);
+
+            }
+
+            if (IsItemInteractable())
+            {
+                crosshairIcon.SetActive(false);
+                closedHandIcon.SetActive(false);
+                openHandIcon.SetActive(false);
+                InteractalbeIcon.SetActive(true);
+            }
+            else
+            {
+                InteractalbeIcon.SetActive(false);
             }
         }
         
@@ -103,6 +126,19 @@ public class PickupController : MonoBehaviour
         return value;
     }
 
+    private bool IsItemInteractable()
+    {
+        bool value = false;
+        if (!cam) return false;
+
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f));
+        if (Physics.Raycast(ray, out var hit, pickupRange, interactableMask))
+        {
+            value = true;
+        }
+        return value;
+    }
+
     private void TryPickup()
     {
         if (!cam) return;
@@ -126,6 +162,8 @@ public class PickupController : MonoBehaviour
         crosshairIcon.SetActive(false);
         closedHandIcon.SetActive(true);
         openHandIcon.SetActive(false);
+        InteractalbeIcon.SetActive(false);
+
 
 
         holdArea.transform.rotation = pickObj.transform.rotation;
@@ -193,6 +231,8 @@ public class PickupController : MonoBehaviour
         crosshairIcon.SetActive(true);
         closedHandIcon.SetActive(false);
         openHandIcon.SetActive(false);
+        InteractalbeIcon.SetActive(false);
+
 
         // Ripristina fisica “normale”
         heldObjRB.useGravity = true;
