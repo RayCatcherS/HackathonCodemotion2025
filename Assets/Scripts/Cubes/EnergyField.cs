@@ -7,11 +7,6 @@ public class EnergyField : ActivatableItem
     [SerializeField] private float energyFieldRadius = 5f;
     [SerializeField] private Transform energyFieldTransform;
 
-    [Header("Material References")]
-    [SerializeField] MeshRenderer[] feedBackMeshRenderer;
-    [SerializeField] private Material enabledMaterial;
-    [SerializeField] private Material disabledMaterial;
-
     private void Start()
     {
         energyFieldTransform.transform.localScale = new Vector3(energyFieldRadius, energyFieldRadius, energyFieldRadius);
@@ -33,18 +28,14 @@ public class EnergyField : ActivatableItem
     {   
         if(enabled)
         {
-            foreach (MeshRenderer renderer in feedBackMeshRenderer)
-            {
-                renderer.material = enabledMaterial;
-            }
+            feedBackMeshRenderer.material = enabledMaterial;
             energyFieldTransform.gameObject.SetActive(true);
+            pointLight.color = enabledLight;
         } else
         {
-            foreach (MeshRenderer renderer in feedBackMeshRenderer)
-            {
-                renderer.material = disabledMaterial;
-            }
+            feedBackMeshRenderer.material = disabledMaterial;
             energyFieldTransform.gameObject.SetActive(false);
+            pointLight.color = disabledLight;
         }
         
     }

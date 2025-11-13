@@ -1,15 +1,14 @@
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class WindCube : ActivatableItem
 {
     [SerializeField] private float windCubeForce = 1.0f;
     [SerializeField] private bool windEnabled = false;
 
-    [Header("Material References")]
-    [SerializeField] MeshRenderer feedBackMeshRenderer;
-    [SerializeField] private Material enabledMaterial;
-    [SerializeField] private Material disabledMaterial;
+    
+
 
     // states
     private bool blockStateActive = false;
@@ -28,8 +27,10 @@ public class WindCube : ActivatableItem
         if (enabled ) {
 
             feedBackMeshRenderer.material = enabledMaterial;
+            pointLight.color = enabledLight;
         } else{
             feedBackMeshRenderer.material = disabledMaterial;
+            pointLight.color = disabledLight;
         }
     }
 
