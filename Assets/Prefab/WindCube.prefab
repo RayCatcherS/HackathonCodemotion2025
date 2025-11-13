@@ -4982,7 +4982,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7853139360856045713}
-  - component: {fileID: 2240454141296628614}
   - component: {fileID: 9101319266780485642}
   - component: {fileID: 5746493792828970738}
   - component: {fileID: 6952366868605308441}
@@ -5012,14 +5011,6 @@ Transform:
   - {fileID: 8549794050309314014}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2240454141296628614
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6663799638381108212}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &9101319266780485642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5174,6 +5165,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 378f5d7ea67b44771b4b684daf42a621, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 129b6cb6b40c1b544841ea85fadeccbf, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3965527717863064395, guid: c84188f6905ef774cb07d6a374e0cc53, type: 3}
     - target: {fileID: 919132149155446097, guid: 129b6cb6b40c1b544841ea85fadeccbf, type: 3}
       propertyPath: m_Name
       value: CubeModel
