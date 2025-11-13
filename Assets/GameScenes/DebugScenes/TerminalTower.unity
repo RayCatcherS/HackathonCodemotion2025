@@ -3945,10 +3945,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6741021313059935692, guid: 3eddb1c085d88044cbe6a1c7f5783f2c, type: 3}
-      propertyPath: countToReachToActivate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6741021313059935692, guid: 3eddb1c085d88044cbe6a1c7f5783f2c, type: 3}
       propertyPath: 'itemToactivate.Array.data[0]'
       value: 
       objectReference: {fileID: 7683927330005880722}

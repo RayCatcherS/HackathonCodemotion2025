@@ -134,7 +134,11 @@ public class PickupController : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f));
         if (Physics.Raycast(ray, out var hit, pickupRange, interactableMask))
         {
-            value = true;
+
+            Terminal terminal = hit.rigidbody.GetComponent<Terminal>();
+            if(terminal.IsReadyToInteract()) {
+                value = true;
+            }
         }
         return value;
     }
