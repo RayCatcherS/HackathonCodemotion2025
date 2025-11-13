@@ -6,7 +6,8 @@ public class WindCube : MonoBehaviour
     [SerializeField] private float windCubeForce = 1.0f;
     [SerializeField] private bool windEnabled = false;
 
-    [SerializeField] MeshRenderer meshRenderer;
+    [Header("Material References")]
+    [SerializeField] MeshRenderer feedBackMeshRenderer;
     [SerializeField] private Material enabledMaterial;
     [SerializeField] private Material disabledMaterial;
 
@@ -26,9 +27,9 @@ public class WindCube : MonoBehaviour
         blockStateActive = enabled;
         if (enabled ) {
 
-            meshRenderer.material = enabledMaterial;
+            feedBackMeshRenderer.material = enabledMaterial;
         } else{
-            meshRenderer.material = disabledMaterial;
+            feedBackMeshRenderer.material = disabledMaterial;
         }
     }
 

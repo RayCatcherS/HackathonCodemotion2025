@@ -266,6 +266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WindCube
   windCubeForce: 20
   windEnabled: 0
-  meshRenderer: {fileID: 4550980847553529248}
+  feedBackMeshRenderer: {fileID: 4550980847553529248}
   enabledMaterial: {fileID: 2100000, guid: cd758253075610344964e4a24e189099, type: 2}
   disabledMaterial: {fileID: 2100000, guid: 4385d35c3be5ebe4c8c631ea5c1e5d25, type: 2}
