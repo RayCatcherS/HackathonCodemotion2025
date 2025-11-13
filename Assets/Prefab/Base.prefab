@@ -50,7 +50,7 @@ MonoBehaviour:
   enabledMaterial: {fileID: 2100000, guid: cd758253075610344964e4a24e189099, type: 2}
   disabledMaterial: {fileID: 2100000, guid: 4385d35c3be5ebe4c8c631ea5c1e5d25, type: 2}
   pointLight: {fileID: 4332273240773182063}
-  enabledLight: {r: 0, g: 0, b: 0, a: 0}
+  enabledLight: {r: 0.14901961, g: 0.5294118, b: 1, a: 0}
   disabledLight: {r: 1, g: 0.49803922, b: 0, a: 0}
   itemToactivate:
   - {fileID: 0}
@@ -263,13 +263,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: dc586f79ee531074382387ca0736e072, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 378f5d7ea67b44771b4b684daf42a621, type: 2}
     - target: {fileID: 919132149155446097, guid: dc586f79ee531074382387ca0736e072, type: 3}
       propertyPath: m_Name
       value: platform
       objectReference: {fileID: 0}
     - target: {fileID: 6507901977716847365, guid: dc586f79ee531074382387ca0736e072, type: 3}
       propertyPath: m_Name
-      value: feedback
+      value: Feedback
       objectReference: {fileID: 0}
     - target: {fileID: 7339356831882890532, guid: dc586f79ee531074382387ca0736e072, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
