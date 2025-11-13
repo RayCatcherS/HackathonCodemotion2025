@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class Cage : MonoBehaviour
+public class Cage : ActivatableItem
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject[] cageShield;
+
+
+    override public void EnableItem(bool enabled)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
