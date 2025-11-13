@@ -4,10 +4,6 @@ public class Base : ActivatableItem
 {
     [SerializeField] ActivatableItem[] itemToactivate;
 
-    [Header("Material References")]
-    [SerializeField] MeshRenderer feedBackMeshRenderer;
-    [SerializeField] private Material enabledMaterial;
-    [SerializeField] private Material disabledMaterial;
     override public void EnableItem(bool enabled)
     {
         foreach (ActivatableItem item in itemToactivate)
@@ -19,10 +15,14 @@ public class Base : ActivatableItem
         {
 
             feedBackMeshRenderer.material = enabledMaterial;
+            pointLight.color = enabledLight;
+
         }
         else
         {
             feedBackMeshRenderer.material = disabledMaterial;
+            pointLight.color = disabledLight;
+
         }
     }
 }
