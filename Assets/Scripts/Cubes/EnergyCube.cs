@@ -6,6 +6,7 @@ public class EnergyCube : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if (other.isTrigger) return;
 
         WindCube windCube = other.gameObject.GetComponent<WindCube>();
         EnergyField energyField = other.gameObject.GetComponent<EnergyField>();
@@ -30,6 +31,7 @@ public class EnergyCube : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.isTrigger) return;
 
         WindCube windCube = other.gameObject.GetComponent<WindCube>();
         EnergyField energyField = other.gameObject.GetComponent<EnergyField>();
@@ -50,6 +52,8 @@ public class EnergyCube : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.isTrigger) return;
+
         WindCube windCube = other.gameObject.GetComponent<WindCube>();
         EnergyField energyField = other.gameObject.GetComponent<EnergyField>();
         Base baseItem = other.gameObject.GetComponent<Base>();

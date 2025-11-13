@@ -6,7 +6,7 @@ public class WindCube : ActivatableItem
 {
     [SerializeField] private float windCubeForce = 1.0f;
     [SerializeField] private bool windEnabled = false;
-
+    [SerializeField] private ParticleSystem airParticle;
     
 
 
@@ -16,7 +16,13 @@ public class WindCube : ActivatableItem
 
     private void Start()
     {
+
         EnableWind(windEnabled);
+        if (windEnabled) { 
+            airParticle.Play();
+        } else { 
+            airParticle.Stop(); 
+        }
     }
 
     public void EnableWind(bool enabled)
@@ -28,9 +34,11 @@ public class WindCube : ActivatableItem
 
             feedBackMeshRenderer.material = enabledMaterial;
             pointLight.color = enabledLight;
+            airParticle.Play();
         } else{
             feedBackMeshRenderer.material = disabledMaterial;
             pointLight.color = disabledLight;
+            airParticle.Stop();
         }
     }
 
