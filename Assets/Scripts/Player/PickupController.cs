@@ -23,15 +23,27 @@ public class PickupController : MonoBehaviour
     [SerializeField] private float carryDrag = 10f;
     [SerializeField] private float carryAngularDrag = 10f;
 
+    [Header("UI crosshair")]
+    [SerializeField] private GameObject crosshairIcon;
+    [SerializeField] private GameObject openHandIcon;
+    [SerializeField] private GameObject closedHandIcon;
+
+
     private GameObject heldObj;
     private Rigidbody heldObjRB;
     private Camera cam;
+
 
     private void Awake()
     {
         cam = Camera.main;
         if (!cam) Debug.LogWarning("PickupController: nessuna Camera.main trovata.");
         if (!holdArea) Debug.LogWarning("PickupController: assegna un 'holdArea' (figlio della camera).");
+        // enable open hand icon
+        crosshairIcon.SetActive(true);
+        closedHandIcon.SetActive(false);
+        openHandIcon.SetActive(false);
+
     }
 
     private void Update()
@@ -43,6 +55,26 @@ public class PickupController : MonoBehaviour
             if (heldObj == null) TryPickup();
             else DropObject();
         }
+
+
+        if(heldObj == null)
+        {
+            if (IsItemPickable())
+            {
+                // enable open hand icon
+                crosshairIcon.SetActive(false);
+                closedHandIcon.SetActive(false);
+                openHandIcon.SetActive(true);
+            }
+            else
+            {
+                // enable open hand icon
+                crosshairIcon.SetActive(true);
+                closedHandIcon.SetActive(false);
+                openHandIcon.SetActive(false);
+            }
+        }
+        
     }
 
     private void FixedUpdate()
@@ -51,6 +83,24 @@ public class PickupController : MonoBehaviour
         {
             PhysicsFollow();
         }
+    }
+
+    private bool IsItemPickable()
+    {
+        bool value = false;
+        if (!cam) return false;
+
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f));
+        if (Physics.Raycast(ray, out var hit, pickupRange, pickableMask))
+        {
+            var rb = hit.rigidbody;
+            if (rb != null)
+            {
+                value = true;
+            }
+        }
+
+        return value;
     }
 
     private void TryPickup()
@@ -71,6 +121,12 @@ public class PickupController : MonoBehaviour
     private void PickupObject(GameObject pickObj)
     {
         if (!pickObj.TryGetComponent<Rigidbody>(out var rb)) return;
+
+        // enable closed hand icon
+        crosshairIcon.SetActive(false);
+        closedHandIcon.SetActive(true);
+        openHandIcon.SetActive(false);
+
 
         holdArea.transform.rotation = pickObj.transform.rotation;
         heldObj = pickObj;
@@ -132,6 +188,11 @@ public class PickupController : MonoBehaviour
             heldObj = null;
             return;
         }
+
+        // disable hand icon and enable crosshair
+        crosshairIcon.SetActive(true);
+        closedHandIcon.SetActive(false);
+        openHandIcon.SetActive(false);
 
         // Ripristina fisica “normale”
         heldObjRB.useGravity = true;

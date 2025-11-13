@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class WindCube : MonoBehaviour
+public class WindCube : ActivatableItem
 {
     [SerializeField] private float windCubeForce = 1.0f;
     [SerializeField] private bool windEnabled = false;
@@ -31,6 +31,11 @@ public class WindCube : MonoBehaviour
         } else{
             feedBackMeshRenderer.material = disabledMaterial;
         }
+    }
+
+    public override void EnableItem(bool enabled)
+    {
+        EnableWind(enabled);
     }
 
 

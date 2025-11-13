@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnergyField : MonoBehaviour
+public class EnergyField : ActivatableItem
 {
 
     [Header("Energy field settings")]
@@ -22,6 +22,11 @@ public class EnergyField : MonoBehaviour
     public void SetEnergyFieldRadius(float radius)
     {
         energyFieldRadius = radius;
+    }
+
+    public override void EnableItem(bool enabled)
+    {
+        EnableForceField(enabled);
     }
 
     public void EnableForceField(bool enabled)
