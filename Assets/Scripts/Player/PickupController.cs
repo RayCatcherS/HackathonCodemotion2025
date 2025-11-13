@@ -72,6 +72,7 @@ public class PickupController : MonoBehaviour
     {
         if (!pickObj.TryGetComponent<Rigidbody>(out var rb)) return;
 
+        holdArea.transform.rotation = pickObj.transform.rotation;
         heldObj = pickObj;
         heldObjRB = rb;
 
