@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Obelisk : ActivatableItem
 {
+    [SerializeField] private GameController gameController;
     override public void EnableItem(bool enabled)
     {
 
@@ -15,6 +16,6 @@ public class Obelisk : ActivatableItem
 
     private void StartEndGame()
     {
-        
+        gameController.EndGameAnimation();
     }
 }

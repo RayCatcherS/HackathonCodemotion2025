@@ -37,4 +37,17 @@ public class GameController : MonoBehaviour
         playerScene2.SetActive(true);
 
     }
+
+    [ContextMenu("end game")]
+    public async Task EndGameAnimation()
+    {
+               _ = EndGameAnimationAsync();
+    }
+    public async Task EndGameAnimationAsync()
+    {
+        playerScene1.SetActive(false);
+        playerScene2.SetActive(false);
+        cameraSequence2.SetActive(true);
+        cameraSequence2.GetComponent<Animation>().Play("EndGameAnimation");
+    }
 }
