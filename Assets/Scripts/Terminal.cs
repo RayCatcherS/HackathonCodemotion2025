@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Terminal : ActivatableItem
 {
@@ -7,6 +8,8 @@ public class Terminal : ActivatableItem
     [SerializeField] private int currentCount;
     [SerializeField] private Animation tActivated;
     private bool isActivated = false;
+    [SerializeField] private bool eventTerminal = false;
+    [SerializeField] private UnityEvent terminaEvent;
     override public void EnableItem(bool enabled)
     {
         if (enabled)
@@ -60,12 +63,19 @@ public class Terminal : ActivatableItem
 
     public void StartInteraction()
     {
-        Debug.Log("Terminal Activated");
-        tActivated.Play("terminalActivated");
-        foreach (var item in itemToactivate)
+        //Debug.Log("Terminal Activated");
+        if (!eventTerminal)
         {
-            item.EnableItem(true);
+            foreach (var item in itemToactivate)
+            {
+                item.EnableItem(true);
+            }
+        } else
+        {
+            // activate event
+            terminaEvent.Invoke();
         }
+        tActivated.Play("terminalActivated");
         isActivated = true;
     }
 }
