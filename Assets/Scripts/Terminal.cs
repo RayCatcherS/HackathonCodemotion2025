@@ -5,6 +5,8 @@ public class Terminal : ActivatableItem
     [SerializeField] private ActivatableItem[] itemToactivate;
     [SerializeField] private int countToReachToActivate;
     [SerializeField] private int currentCount;
+    [SerializeField] private Animation tActivated;
+    private bool isActivated = false;
     override public void EnableItem(bool enabled)
     {
         if (enabled)
@@ -15,40 +17,55 @@ public class Terminal : ActivatableItem
             {
                 feedBackMeshRenderer.material = enabledMaterial;
                 pointLight.color = enabledLight;
-
-                foreach (var item in itemToactivate)
-                {
-                    item.EnableItem(true);
-                }
             }
         }
         else
         {
+
+            
             currentCount --;
             feedBackMeshRenderer.material = disabledMaterial;
             pointLight.color = disabledLight;
 
-            foreach (var item in itemToactivate)
+            if(isActivated)
             {
-                item.EnableItem(false);
+                tActivated.Play("terminalDisactivated");
+                isActivated = false;
+                foreach (var item in itemToactivate)
+                {
+                    item.EnableItem(false);
+                }
             }
+            
         }
 
     }
 
     public bool IsReadyToInteract()
     {
-        if (currentCount == countToReachToActivate)
+        bool returnValue = false;
+        if (!isActivated)
         {
-            return true;
+            if (currentCount == countToReachToActivate)
+            {
+                returnValue = true;
+            }
+            else
+            {
+                returnValue = false;
+            }
         }
-        else { 
-            return false;
-        }
+        return returnValue;
     }
 
     public void StartInteraction()
     {
-
+        Debug.Log("Terminal Activated");
+        tActivated.Play("terminalActivated");
+        foreach (var item in itemToactivate)
+        {
+            item.EnableItem(true);
+        }
+        isActivated = true;
     }
 }

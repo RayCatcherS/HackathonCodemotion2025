@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PickupController : MonoBehaviour
 {   
@@ -10,7 +11,7 @@ public class PickupController : MonoBehaviour
     
 
     //[Header("Keybinds")]
-    //[SerializeField] private KeyCode pickUpKey = KeyCode.E;
+    [SerializeField] private KeyCode interactionKey = KeyCode.E;
 
 
     [Header("Follow (Translation)")]
@@ -85,12 +86,19 @@ public class PickupController : MonoBehaviour
 
             }
 
-            if (IsItemInteractable())
+            Terminal terminal = IsItemInteractable();
+            if (terminal != null)
             {
                 crosshairIcon.SetActive(false);
                 closedHandIcon.SetActive(false);
                 openHandIcon.SetActive(false);
                 InteractalbeIcon.SetActive(true);
+
+
+                if (Input.GetKeyDown(interactionKey))
+                {
+                    terminal.StartInteraction();
+                }
             }
             else
             {
@@ -119,28 +127,34 @@ public class PickupController : MonoBehaviour
             var rb = hit.rigidbody;
             if (rb != null)
             {
-                value = true;
+                if (!rb.isKinematic) {
+                    value = true;
+                }
             }
         }
 
         return value;
     }
 
-    private bool IsItemInteractable()
+    private Terminal IsItemInteractable()
     {
-        bool value = false;
-        if (!cam) return false;
+        Terminal terminal = null;
+        if (!cam) return null;
 
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f));
         if (Physics.Raycast(ray, out var hit, pickupRange, interactableMask))
         {
 
-            Terminal terminal = hit.rigidbody.GetComponent<Terminal>();
-            if(terminal.IsReadyToInteract()) {
-                value = true;
+            terminal = hit.rigidbody.GetComponent<Terminal>();
+
+            if (!terminal.IsReadyToInteract())
+            {
+                terminal = null;
             }
+            
+            
         }
-        return value;
+        return terminal;
     }
 
     private void TryPickup()
