@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4446354451684206772}
   - component: {fileID: 2413997695918737968}
-  - component: {fileID: 2733484713747230692}
+  - component: {fileID: 6254168847569568387}
   m_Layer: 17
   m_Name: Base
   m_TagString: Untagged
@@ -55,7 +55,7 @@ MonoBehaviour:
   itemToactivate:
   - {fileID: 0}
   - {fileID: 0}
---- !u!65 &2733484713747230692
+--- !u!65 &6254168847569568387
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,8 +74,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019999998, y: 0.020000001, z: 0.0008335916}
-  m_Center: {x: 0, y: -0.000000007450581, z: 0.0004167958}
+  m_Size: {x: 1.2845764, y: 0.5638236, z: 1.342937}
+  m_Center: {x: -0.0030972364, y: -0.21808517, z: -0.01923117}
 --- !u!1 &9144842275529959635
 GameObject:
   m_ObjectHideFlags: 0
